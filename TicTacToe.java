@@ -3,8 +3,9 @@ import java.util.Scanner;
 
 public class TicTacToe {
     public static void main(String[] args) {
-        char[][] gameBoard = { { ' ', '|', ' ', '|', ' ' }, { '-', '+', '-', '+', '-' }, { ' ', '|', ' ', '|', ' ' },
-                { '-', '+', '-', '+', '-' }, { ' ', '|', ' ', '|', ' ' } };
+        String[][] gameBoard = { { "   ", "|", "   ", "|", "   " }, { "---", "+", "---", "+", "---" },
+                { "   ", "|", "   ", "|", "   " }, { "---", "+", "---", "+", "---" },
+                { "   ", "|", "   ", "|", "   " }, };
 
         printGameBoard(gameBoard);
         Scanner scanner = new Scanner(System.in);
@@ -22,22 +23,22 @@ public class TicTacToe {
         }
     }
 
-    public static void printGameBoard(char[][] gameBoard) {
-        for (char[] row : gameBoard) {
-            for (char element : row) {
-                System.out.print(element);
+    public static void printGameBoard(String[][] gameBoard) {
+        for (String[] row : gameBoard) {
+            for (String rowElement : row) {
+                System.out.print(rowElement);
             }
             System.out.println();
         }
     }
 
-    public static void placeCharacter(char[][] gameBoard, int pos, String user) {
-        char userChar = ' ';
+    public static void placeCharacter(String[][] gameBoard, int pos, String user) {
+        String userChar = "   ";
 
         if (user.equals("cpu")) {
-            userChar = 'O';
+            userChar = " O ";
         } else if (user.equals("player")) {
-            userChar = 'X';
+            userChar = " X ";
         }
 
         switch (pos) {
